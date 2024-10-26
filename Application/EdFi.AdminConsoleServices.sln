@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EdFi.AdminConsoleHealthCheckService", "AdminConsoleHealthCheckService\EdFi.AdminConsoleHealthCheckService.csproj", "{219675DF-FAA7-42F2-9EA7-6A2CD8F1E8DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EdFi.AdminConsoleHealthCheckService", "EdFi.AdminConsoleHealthCheckService\EdFi.AdminConsoleHealthCheckService.csproj", "{219675DF-FAA7-42F2-9EA7-6A2CD8F1E8DC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -13,7 +13,7 @@
 
 ## Project Initial Configuration
 
-This project depends on AdminAPI, so it will be require to provide the information at [`Application/AdminConsoleHealthCheckService/appsettings.json`], where you can find the section [`AdminApiSettings`]. Following you can find an example configuration for this section: 
+This project depends on AdminAPI, so it will be require to provide the information at `Application/AdminConsoleHealthCheckService/appsettings.json`, where you can find the section `AdminApiSettings`. Following you can find an example configuration for this section: 
 
 ```json
 "AdminApiSettings": {
@@ -28,6 +28,16 @@ This project depends on AdminAPI, so it will be require to provide the informati
 
 ## Launch the project
 
-If you want to launch Health Check service, you can open your terminal and redirect it to the directory [`/Application/AdminConsoleHealthCheckService/appsettings.json`], then run the command [`dotnet run`]
+If you want to launch Health Check service, you can open your terminal and redirect it to the directory `/Application/AdminConsoleHealthCheckService/appsettings.json`, then run the command `dotnet run`
 
-If you enabled swagger at [`appSettings.json`], then you will be able to access ['[Your_URL]/swagger']
+If you enabled swagger at `appSettings.json`, then you will be able to access `[Your_URL]/swagger`
+
+
+## Launch the project with docker
+
+In case you want to run the project from docker, you can run the next commands `from the repository main folder`
+
+```bash
+docker build -f Docker/healthcheck.dockerfile -t healthcheckservice .
+docker run -d -p 38080:8080 --name healthcheckservice healthcheckservice
+```

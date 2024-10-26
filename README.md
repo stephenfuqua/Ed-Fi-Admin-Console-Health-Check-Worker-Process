@@ -21,7 +21,7 @@ The goal of this repository is to centralize various microservices that can be u
 
 The *Health Check* microservice is responsible for verifying the status of Admin Console.
 
-For more details about the *Health Check* microservice, please refer to the documentation file: [`docs/healthCheck.md`](docs/healthCheck.md).
+For more details about the *Health Check* microservice, please refer to the documentation file: `docs/healthCheck.md`.
 
 ## Getting Started
 
