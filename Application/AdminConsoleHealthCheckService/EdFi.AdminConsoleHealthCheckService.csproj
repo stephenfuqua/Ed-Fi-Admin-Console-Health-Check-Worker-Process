@@ -15,4 +15,12 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <EditorConfigFiles Remove="C:\Users\rgamboaa\source\repos\Ed-Fi-Alliance-OSS\Ed-Fi-Admin-Console-Services\Admin-Console-Health-Check-Service\Admin-Console-Health-Check-Service\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="C:\Users\rgamboaa\source\repos\Ed-Fi-Alliance-OSS\Ed-Fi-Admin-Console-Services\Admin-Console-Health-Check-Service\Admin-Console-Health-Check-Service\.editorconfig" />
+  </ItemGroup>
+
 </Project>
