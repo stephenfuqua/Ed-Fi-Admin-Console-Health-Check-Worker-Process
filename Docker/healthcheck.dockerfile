@@ -1,25 +1,30 @@
+# SPDX-License-Identifier: Apache-2.0
+# Licensed to the Ed-Fi Alliance under one or more agreements.
+# The Ed-Fi Alliance licenses this file to you under the Apache License, Version 2.0.
+# See the LICENSE and NOTICES files in the project root for more information.
+
 # EdFi.AdminConsoleHealthCheckService.Dockerfile
 
-# Imagen base de .NET SDK para compilar y publicar la aplicación
+# Image based on .NET SDK to compile and publish the application
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /source
 
-# Copiar el archivo de EdFi.AdminConsoleServices y los archivos de proyecto
+# Copy EdFi.AdminConsoleHealthCheckService.csproj file
 COPY ../Application/EdFi.AdminConsoleServices.sln .
 COPY ../Application/EdFi.AdminConsoleHealthCheckService/EdFi.AdminConsoleHealthCheckService.csproj ./EdFi.AdminConsoleHealthCheckService/
 
-# Restaurar las dependencias
+# Restore dependencies
 RUN dotnet restore
 
-# Copiar el resto del código fuente y compilar la aplicación
+# Copy source code and compile the application
 COPY ../Application/EdFi.AdminConsoleHealthCheckService/. ./EdFi.AdminConsoleHealthCheckService/
 WORKDIR /source/EdFi.AdminConsoleHealthCheckService
 RUN dotnet publish -c Release -o /app
 
-# Imagen base de .NET Runtime para ejecutar la aplicación
+# .NET Runtime image to execute the application
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
 WORKDIR /app
 COPY --from=build /app .
 
-# Ejecutar la aplicación
+# Execute the app
 ENTRYPOINT ["dotnet", "EdFi.AdminConsoleHealthCheckService.dll"]

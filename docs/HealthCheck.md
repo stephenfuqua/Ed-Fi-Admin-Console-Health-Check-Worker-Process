@@ -38,6 +38,6 @@ If you enabled swagger at `appSettings.json`, then you will be able to access `[
 In case you want to run the project from docker, you can run the next commands `from the repository main folder`
 
 ```bash
-docker build -f Docker/healthcheck.dockerfile -t healthcheckservice .
+docker build -f Docker/healthcheck.Dockerfile -t healthcheckservice .
 docker run -d -p 38080:8080 --name healthcheckservice healthcheckservice
 ```
