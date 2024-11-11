@@ -1,6 +1,6 @@
-# Ed-Fi-Admin-Console-Services
+# Ed-Fi-Admin-Console-Health-Check-Service
 
-This repository contains a collection of microservices designed to provide different standalone functionalities that can be used in Admin Console. Each microservice is developed independently, with its own configurations and specific documentation.
+This is a microservice designed provide health check service for Ed-Fi instances running and managed with Admin Console.
 
 ## Table of Contents
 
@@ -27,4 +27,4 @@ For more details about the *Health Check* microservice, please refer to the docu
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Ed-Fi-Alliance-OSS/Ed-Fi-Admin-Console-Services.git
+   git clone https://github.com/Ed-Fi-Alliance-OSS/Ed-Fi-Admin-Console-Health-Check-Service.git
