@@ -21,6 +21,7 @@ permissions: read-all
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 
 jobs:
   scan-actions-bidi:
@@ -32,6 +33,10 @@ jobs:
   analyze-code:
     name: Analyze Code
     runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
     defaults:
       run:
         shell: pwsh
@@ -57,8 +62,12 @@ jobs:
         uses: github/codeql-action/analyze@cf7e9f23492505046de9a37830c3711dd0f25bb3 # codeql-bundle-v2.16.2
 
   event_file:
-    name: "Event File"
+    name: Upload event file
     runs-on: ubuntu-latest
+    needs:
+      - scan-actions-bidi
+      - analyze-code
+    if: always()
     steps:
       - name: Upload
         uses: actions/upload-artifact@26f96dfa697d77e81fd5907df203aa23a56210a8 # v4.3.0
